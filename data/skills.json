@@ -1,0 +1,61 @@
+{
+  "categories": [
+    {
+      "name": "💻 Development Tools",
+      "skills": [
+        { "name": "VS Code", "level": 95, "icon": "💻" },
+        { "name": "React", "level": 90, "icon": "⚛️" },
+        { "name": "Next.js", "level": 85, "icon": "▲" },
+        { "name": "JavaScript", "level": 90, "icon": "🟨" },
+        { "name": "TypeScript", "level": 80, "icon": "📘" },
+        { "name": "Node.js", "level": 75, "icon": "🟢" },
+        { "name": "HTML", "level": 95, "icon": "🌐" },
+        { "name": "CSS", "level": 95, "icon": "🎨" },
+        { "name": "Tailwind CSS", "level": 90, "icon": "💨" },
+        { "name": "Bootstrap", "level": 85, "icon": "💎" },
+        { "name": "PHP", "level": 80, "icon": "🐘" },
+        { "name": "MySQL", "level": 85, "icon": "🗄️" },
+        { "name": "Git", "level": 85, "icon": "📚" },
+        { "name": "GitHub", "level": 90, "icon": "🐙" }
+      ]
+    },
+    {
+      "name": "🎨 Design Tools",
+      "skills": [
+        { "name": "Figma", "level": 90, "icon": "🎨" },
+        { "name": "Adobe XD", "level": 85, "icon": "🎯" },
+        { "name": "Adobe Photoshop", "level": 85, "icon": "🖼️" },
+        { "name": "Adobe Illustrator", "level": 80, "icon": "🎨" },
+        { "name": "Framer", "level": 75, "icon": "🎬" },
+        { "name": "Canva", "level": 90, "icon": "🎨" }
+      ]
+    },
+    {
+      "name": "🤖 AI Tools",
+      "skills": [
+        { "name": "ChatGPT", "level": 95, "icon": "🤖" },
+        { "name": "Cursor AI", "level": 90, "icon": "💻" },
+        { "name": "Figma Make", "level": 85, "icon": "🎨" },
+        { "name": "Google AI Studio", "level": 85, "icon": "🧠" },
+        { "name": "Google Gemini", "level": 90, "icon": "💎" },
+        { "name": "Microsoft Copilot", "level": 88, "icon": "🚀" },
+        { "name": "Prompt Perfect", "level": 80, "icon": "✨" },
+        { "name": "Claude AI", "level": 85, "icon": "🔮" },
+        { "name": "GitHub Copilot", "level": 90, "icon": "🐙" },
+        { "name": "Midjourney", "level": 80, "icon": "🎭" },
+        { "name": "Notion AI", "level": 85, "icon": "📝" },
+        { "name": "Perplexity AI", "level": 82, "icon": "🔍" }
+      ]
+    },
+    {
+      "name": "⚙️ Utilities & Productivity",
+      "skills": [
+        { "name": "Microsoft Word", "level": 95, "icon": "📄" },
+        { "name": "Microsoft PowerPoint", "level": 90, "icon": "📽️" },
+        { "name": "Microsoft Excel", "level": 85, "icon": "📊" }
+      ]
+    }
+  ]
+}
+
+

@@ -1,0 +1,123 @@
+{
+  "featured": [
+    {
+      "id": "ecommerce-platform",
+      "title": "E-Commerce Platform",
+      "description": "A full-stack e-commerce solution built with Next.js, featuring real-time inventory management, secure payments, and admin dashboard.",
+      "longDescription": "This comprehensive e-commerce platform was built from scratch using modern web technologies. It includes a customer-facing store with product catalog, shopping cart, and checkout process, as well as a complete admin dashboard for inventory management, order processing, and analytics. The platform handles thousands of products and processes hundreds of orders daily.",
+      "image": "/projects/ecommerce-platform.png",
+      "technologies": ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Prisma", "Tailwind CSS"],
+      "liveUrl": "https://ecommerce-demo.vercel.app",
+      "githubUrl": "https://github.com/johndoe/ecommerce-platform",
+      "featured": true,
+      "status": "Completed",
+      "year": 2023,
+      "category": "Full Stack",
+      "challenges": [
+        "Implementing real-time inventory updates",
+        "Optimizing performance for large product catalogs",
+        "Ensuring secure payment processing"
+      ],
+      "results": [
+        "40% increase in conversion rate",
+        "99.9% uptime achieved",
+        "Sub-second page load times"
+      ]
+    },
+    {
+      "id": "task-management-app",
+      "title": "Task Management App",
+      "description": "A collaborative task management application with real-time updates, team collaboration features, and project tracking capabilities.",
+      "longDescription": "Built with React and Node.js, this task management application enables teams to collaborate effectively on projects. Features include real-time updates using WebSockets, drag-and-drop task organization, time tracking, file attachments, and comprehensive reporting. The app supports multiple project views and integrates with popular tools like Slack and GitHub.",
+      "image": "/projects/task-management.png",
+      "technologies": ["React", "Node.js", "Socket.io", "MongoDB", "Express", "Material-UI"],
+      "liveUrl": "https://taskmanager-demo.netlify.app",
+      "githubUrl": "https://github.com/johndoe/task-management",
+      "featured": true,
+      "status": "Completed",
+      "year": 2023,
+      "category": "Full Stack",
+      "challenges": [
+        "Implementing real-time collaboration",
+        "Managing complex state across components",
+        "Optimizing for mobile devices"
+      ],
+      "results": [
+        "50% improvement in team productivity",
+        "Used by 100+ teams",
+        "4.8/5 user rating"
+      ]
+    },
+    {
+      "id": "ai-chatbot",
+      "title": "AI-Powered Chatbot",
+      "description": "An intelligent customer support chatbot powered by OpenAI's GPT API, with custom training and integration capabilities.",
+      "longDescription": "This AI chatbot was developed to handle customer support inquiries for a SaaS company. It integrates with OpenAI's GPT API and includes custom training on company-specific knowledge. The bot can handle complex queries, escalate to human agents when needed, and provides analytics on customer interactions. It reduced response time by 80% and improved customer satisfaction scores.",
+      "image": "/projects/ai-chatbot.png",
+      "technologies": ["Python", "OpenAI API", "FastAPI", "React", "PostgreSQL", "Redis"],
+      "liveUrl": "https://chatbot-demo.herokuapp.com",
+      "githubUrl": "https://github.com/johndoe/ai-chatbot",
+      "featured": true,
+      "status": "Completed",
+      "year": 2023,
+      "category": "AI/ML",
+      "challenges": [
+        "Integrating with OpenAI API",
+        "Handling context and conversation flow",
+        "Ensuring response accuracy"
+      ],
+      "results": [
+        "80% reduction in response time",
+        "95% customer satisfaction rate",
+        "Handles 1000+ queries daily"
+      ]
+    }
+  ],
+  "other": [
+    {
+      "id": "weather-app",
+      "title": "Weather Dashboard",
+      "description": "A beautiful weather application with location-based forecasts and interactive maps.",
+      "image": "/projects/weather-app.png",
+      "technologies": ["React", "OpenWeather API", "Chart.js", "CSS3"],
+      "liveUrl": "https://weather-demo.vercel.app",
+      "githubUrl": "https://github.com/johndoe/weather-app",
+      "featured": false,
+      "status": "Completed",
+      "year": 2022,
+      "category": "Frontend"
+    },
+    {
+      "id": "blog-cms",
+      "title": "Headless CMS Blog",
+      "description": "A modern blog platform with headless CMS integration and markdown support.",
+      "image": "/projects/blog-cms.png",
+      "technologies": ["Next.js", "Strapi", "Markdown", "Tailwind CSS"],
+      "liveUrl": "https://blog-demo.vercel.app",
+      "githubUrl": "https://github.com/johndoe/blog-cms",
+      "featured": false,
+      "status": "Completed",
+      "year": 2022,
+      "category": "Full Stack"
+    },
+    {
+      "id": "crypto-tracker",
+      "title": "Cryptocurrency Tracker",
+      "description": "Real-time cryptocurrency price tracking with portfolio management features.",
+      "image": "/projects/crypto-tracker.png",
+      "technologies": ["Vue.js", "CoinGecko API", "Chart.js", "Vuetify"],
+      "liveUrl": "https://crypto-demo.netlify.app",
+      "githubUrl": "https://github.com/johndoe/crypto-tracker",
+      "featured": false,
+      "status": "Completed",
+      "year": 2022,
+      "category": "Frontend"
+    }
+  ]
+}
+
+
+
+
+
+

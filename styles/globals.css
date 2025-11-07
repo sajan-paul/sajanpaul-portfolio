@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    background-color: transparent; /* allow global Pattern to show */
+    color: #e2e8f0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Prevent global styles from affecting button SVG icons
+     This ensures styled-components can control the sizing without interference */
+  .button svg,
+  .resume-button .svg,
+  .next-button svg {
+    flex-shrink: 0 !important;
+    display: block !important;
+    /* Sizes are controlled by styled-components with !important flags */
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl dark:shadow-primary-500/25;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-100 hover:bg-secondary-200 dark:bg-secondary-700 dark:hover:bg-secondary-600 text-secondary-800 dark:text-secondary-200 font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 border border-secondary-300 dark:border-secondary-600;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-secondary-800 rounded-xl shadow-lg hover:shadow-xl dark:shadow-secondary-700/50 transition-all duration-300 transform hover:-translate-y-1 border border-secondary-100 dark:border-secondary-700;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-secondary-900 dark:to-secondary-800;
+  }
+  
+  .display-text {
+    @apply font-display text-secondary-800 dark:text-secondary-100 font-bold tracking-tight;
+  }
+  
+  .accent-text {
+    @apply font-accent text-secondary-600 dark:text-secondary-300 font-medium;
+  }
+  
+  .creative-text {
+    @apply font-creative text-secondary-700 dark:text-secondary-200 tracking-wider uppercase;
+  }
+  
+  .neon-glow {
+    @apply text-primary-500 dark:text-primary-400 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)];
+  }
+  
+  .text-outline {
+    @apply text-transparent bg-clip-text;
+    -webkit-text-stroke: 1px currentColor;
+    text-stroke: 1px currentColor;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .backdrop-blur-custom {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* Fancy CTA button for Contact form - scoped styles */
+.fancy-btn {
+  --active: 0;
+  --pressed: 0;
+  height: 48px;
+  padding: 0;
+  display: grid;
+  border-radius: 8px;
+  border: 2px solid #2a2a3b; /* subtle dark border to match site */
+  letter-spacing: 0.25px;
+  cursor: pointer;
+  position: relative;
+  background: #0b1020; /* deep slate to match project base */
+  color: white;
+  font-weight: 600;
+  outline-color: #7c3aed; /* deep purple */
+  outline-offset: 0.25rem;
+}
+
+.fancy-btn:is(:hover, :focus-visible) {
+  --active: 1;
+}
+
+.fancy-btn:active { --pressed: 1; }
+
+.fancy-btn > span:nth-of-type(1) {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  position: absolute;
+  inset: 0;
+  scale: calc(1 - (var(--pressed, 0) * 0.05));
+  transition: scale 0.1s;
+}
+
+.fancy-btn:is(:hover, :focus-visible) .fancy-container { width: 100%; }
+
+.fancy-container {
+  --mask-image: url(https://assets.codepen.io/605876/chev-mask_1.png);
+  --spread: 24px;
+  --size: 28px;
+  width: 58px;
+  height: 100%;
+  background: linear-gradient(90deg, #06b6d4 0%, #8b5cf6 50%, #ec4899 100%);
+  position: absolute;
+  left: 0;
+  transition: width 0.25s;
+  border-radius: 6px;
+  box-shadow: 0 10px 18px -6px rgba(139, 92, 246, 0.45);
+  container-type: inline-size;
+}
+
+.fancy-primary {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: hsl(0 0% 0% / 0.15);
+  z-index: 2;
+  mask: var(--mask-image) 50% 50% / var(--size) var(--size) no-repeat;
+  container-type: inline-size;
+}
+
+.fancy-primary::after, .fancy-complimentary::after {
+  --distance: calc(100cqi + 100%);
+  content: "";
+  height: calc(var(--size) * 4);
+  aspect-ratio: 1;
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  translate: -50% -50%;
+  background: radial-gradient(hsl(0 0% 0%), transparent);
+  animation: fly-by calc((2 - var(--active, 0)) * 1s) infinite linear;
+}
+
+@keyframes fly-by {
+  0% { translate: -100% -50%; }
+  100% { translate: calc(100cqi + 100%) -50%; }
+}
+
+.fancy-complimentary {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: var(--active, 0);
+  transition: opacity 0.25s;
+  background: hsl(0 0% 0% / 0.15);
+  mask:
+    var(--mask-image) calc(50% - (var(--spread) * 1)) 50% / var(--size) var(--size) no-repeat,
+    var(--mask-image) calc(50% - (var(--spread) * 2)) 50% / var(--size) var(--size) no-repeat,
+    var(--mask-image) calc(50% - (var(--spread) * 3)) 50% / var(--size) var(--size) no-repeat,
+    var(--mask-image) calc(50% + (var(--spread) * 1)) 50% / var(--size) var(--size) no-repeat,
+    var(--mask-image) calc(50% + (var(--spread) * 2)) 50% / var(--size) var(--size) no-repeat,
+    var(--mask-image) calc(50% + (var(--spread) * 3)) 50% / var(--size) var(--size) no-repeat;
+}
+
+.fancy-btn > span:nth-of-type(2) {
+  padding: 0 1.1rem 0 calc(58px + 1.1rem);
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+

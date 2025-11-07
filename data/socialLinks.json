@@ -1,0 +1,55 @@
+{
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/sajan-paul",
+      "icon": "github",
+      "color": "#333333",
+      "description": "Check out my open source projects and contributions"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/sajanpaul29/",
+      "icon": "linkedin",
+      "color": "#0077B5",
+      "description": "Connect with me professionally"
+    },
+    {
+      "name": "WhatsApp Business",
+      "url": "https://wa.me/880185286690",
+      "icon": "whatsapp",
+      "color": "#25D366",
+      "description": "Chat with me on WhatsApp Business"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/sajanpaul29",
+      "icon": "telegram",
+      "color": "#0088CC",
+      "description": "Message me on Telegram - @sajanpaul29"
+    },
+    {
+      "name": "Gmail",
+      "url": "mailto:sajanpaul29@gmail.com",
+      "icon": "mail",
+      "color": "#EA4335",
+      "description": "Send me an email directly"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.com/users/sajanpaul",
+      "icon": "discord",
+      "color": "#5865F2",
+      "description": "Connect with me on Discord - sajanpaul (Legacy: Sajan#6657)"
+    }
+  ],
+  "contact": {
+    "email": "sajanpaul29@gmail.com",
+    "phone": "+8801852-86690",
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available for freelance and full-time work",
+    "responseTime": "Usually responds within 24 hours"
+  }
+}
+
+

@@ -1,0 +1,316 @@
+/* Owl Carousel Custom Styles */
+.owl-carousel .owl-nav [class*='owl-'] {
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.owl-carousel .owl-nav [class*='owl-'].disabled:hover {
+    background-color: #D6D6D6;
+}
+.owl-carousel {
+    position: relative;
+}
+.owl-carousel a:hover {
+    text-decoration: none;
+}
+.owl-carousel .owl-next,
+.owl-carousel .owl-prev {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    font-size: 18px;
+    background-color: #0088cc;
+    color: #fff;
+    text-align: center;
+}
+.owl-carousel .owl-prev {
+    right: 35px;
+    top: -63px;
+}
+.owl-carousel .owl-next {
+    right: 5px;
+    top: -63px;
+}
+.item {
+    background: transparent;
+    padding: 5px;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0px;
+}
+
+.item img {
+    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, .3);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .3);
+    max-height: 225px;
+    border-radius: 3px;
+}
+.figure-caption {
+    margin-top: 8px;
+}
+@media screen and (max-width: 480px) {
+    .item img {
+        height: 200px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .item img {
+        height: 200px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .item img {
+        height: 200px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .item img {
+        height: 100px;
+    }
+}
+
+/* Owl Carousel Theme Default Styles */
+.owl-theme .owl-dots,
+.owl-theme .owl-nav {
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+.owl-theme .owl-nav {
+    margin-top: 10px;
+}
+.owl-theme .owl-nav [class*=owl-] {
+    color: #FFF;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #D6D6D6;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: #869791;
+    color: #FFF;
+    text-decoration: none;
+}
+.owl-theme .owl-nav .disabled {
+    opacity: .5;
+    cursor: default;
+}
+.owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 10px;
+}
+.owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1;
+}
+.owl-theme .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    margin: 5px 7px;
+    background: #D6D6D6;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity .2s ease;
+    border-radius: 30px;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: #869791;
+}
+
+/* Project Card Styles - Applying Owl Carousel Theme */
+.project-card-owl {
+    background: transparent;
+    padding: 5px;
+    text-align: center;
+    margin: 0px;
+}
+
+.project-card-owl img {
+    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, .3);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .3);
+    border-radius: 3px;
+}
+
+.project-card-caption {
+    margin-top: 8px;
+}
+
+/* Responsive adjustments for project cards */
+@media screen and (max-width: 480px) {
+    .project-card-owl img {
+        height: 200px;
+        object-fit: cover;
+    }
+}
+@media screen and (max-width: 600px) {
+    .project-card-owl img {
+        height: 200px;
+        object-fit: cover;
+    }
+}
+@media screen and (max-width: 800px) {
+    .project-card-owl img {
+        height: 200px;
+        object-fit: cover;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .project-card-owl img {
+        height: 100px;
+        object-fit: cover;
+    }
+}
+
+/* 3D Carousel Styles */
+.project-carousel .item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 320px; /* Reduced frame so full image can fit inside */
+    width: 240px;  /* Reduced card width on mobile/tablet */
+}
+
+.project-carousel img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5), 0 3px 8px rgba(0,0,0,0.3);
+    max-height: 320px;
+    object-fit: contain; /* show entire image without cropping */
+    background: rgba(0,0,0,0.2); /* subtle letterbox background */
+    display: block;
+    transition: none !important;
+}
+
+/* Disable size-change animation: snap sizes to each position */
+.project-carousel .owl-item,
+.project-carousel .owl-item .item,
+.project-carousel img { transition: none !important; }
+
+.owl-stage {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    transition: none !important; /* disable stage sliding animation */
+    overflow: visible !important; /* Allow overlapping cards to be visible */
+}
+
+/* Enable overlapping cards with proper layering */
+.project-carousel .owl-item {
+    overflow: visible !important;
+    position: relative;
+    will-change: transform, z-index; /* Optimize for layering */
+}
+
+/* Create fanning/overlapping effect */
+.project-carousel .owl-item .item {
+    overflow: visible;
+    position: relative;
+}
+
+/* Container must allow overflow */
+.project-carousel {
+    overflow: visible !important;
+    position: relative;
+}
+
+.project-carousel .owl-stage-outer {
+    overflow: hidden !important; /* Clip extra cards while allowing overlap */
+    padding: 0 40px; /* Balanced padding to allow side cards to be visible */
+}
+
+@media (max-width: 999px) {
+    .project-carousel .owl-stage-outer {
+        padding: 0 30px;
+        overflow: hidden !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .project-carousel .owl-stage-outer {
+        padding: 0 50px; /* Padding for 5 cards on tablet and desktop */
+        overflow: hidden !important; /* Clip to show only 5 cards */
+    }
+}
+
+@media (min-width: 1000px) {
+    .project-carousel .owl-stage-outer {
+        padding: 0 60px; /* Balanced padding on desktop */
+        overflow: hidden !important; /* Clip to show only 5 cards */
+    }
+}
+
+.project-carousel .owl-stage {
+    overflow: visible !important;
+}
+
+/* Default center focus for mobile/tablet (3 items) - handled below via item-* classes */
+
+/* Size hierarchy for 3 items on mobile/tablet */
+@media (max-width: 999px) {
+    .project-carousel .item {
+        height: 320px;
+        width: 240px;
+    }
+    .project-carousel img {
+        max-height: 320px;
+    }
+    
+    .project-carousel .owl-item.item-large {
+        transform: scale(1.3) !important;
+        z-index: 5;
+        opacity: 1 !important;
+    }
+    .project-carousel .owl-item.item-medium {
+        transform: scale(1.0) !important;
+        z-index: 4;
+        opacity: 0.85 !important;
+    }
+    .project-carousel .owl-item.item-small {
+        transform: scale(0.9) !important;
+        z-index: 3;
+        opacity: 0.7 !important;
+    }
+}
+
+/* Size hierarchy for 5 items on tablet and desktop */
+@media (min-width: 768px) {
+    .project-carousel .item { 
+        height: 380px; 
+        width: 320px; /* Balanced width for 5 cards */
+        min-width: 320px;
+        max-width: 320px;
+    }
+    .project-carousel img { 
+        max-height: 380px;
+        width: 100%;
+    }
+    
+    /* 3rd item (center) - Largest and fully visible - FRONT LAYER */
+    .project-carousel .owl-item.item-large {
+        transform: scale(1.35) !important;
+        z-index: 100 !important; /* Highest - front layer */
+        opacity: 1 !important;
+    }
+    
+    /* 2nd and 4th items (left and right of center) - Medium size - 2ND LAYER (behind center) */
+    .project-carousel .owl-item.item-medium {
+        transform: scale(1.05) !important;
+        z-index: 50 !important; /* Medium - behind center */
+        opacity: 0.95 !important;
+    }
+    
+    /* 1st and 5th items (outermost) - Smaller - 3RD LAYER (behind 2nd layer) */
+    .project-carousel .owl-item.item-small {
+        transform: scale(0.9) !important;
+        z-index: 10 !important; /* Lowest - behind 2nd layer */
+        opacity: 0.85 !important;
+    }
+    
+    /* Ensure cards can overlap but clip extra cards */
+    .project-carousel .owl-stage-outer {
+        overflow: hidden !important; /* Clip to show only 5 cards */
+    }
+}
+
