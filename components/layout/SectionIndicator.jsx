@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 const sections = [
   { id: 'home', label: 'home' },
@@ -11,10 +12,34 @@ const sections = [
 ];
 
 export default function SectionIndicator() {
+  const router = useRouter();
   const [active, setActive] = useState('home');
+  const [pageLabel, setPageLabel] = useState('');
+
+  // Check if we're on a non-home page
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const pathname = router.pathname;
+    
+    if (pathname === '/projects') {
+      setPageLabel('projects');
+      return;
+    } else if (pathname.startsWith('/blog/')) {
+      setPageLabel('blog');
+      return;
+    } else {
+      setPageLabel('');
+    }
+  }, [router.pathname]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    
+    // If we're on a non-home page, don't track sections
+    if (pageLabel) {
+      return;
+    }
 
     const els = sections
       .map((s) => document.getElementById(s.id))
@@ -51,9 +76,9 @@ export default function SectionIndicator() {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', update);
     };
-  }, [active]);
+  }, [active, pageLabel]);
 
-  const label = sections.find((s) => s.id === active)?.label ?? '';
+  const label = pageLabel || (sections.find((s) => s.id === active)?.label ?? '');
   const letters = label.toUpperCase().split('');
 
   return (

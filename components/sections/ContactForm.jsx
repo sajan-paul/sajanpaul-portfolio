@@ -26,7 +26,7 @@ const ContactForm = () => {
     });
   };
 
-  // Submit to Formspree without page redirect
+  // Handle form submission using Formspree
   const handleFormspreeSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -43,6 +43,7 @@ const ContactForm = () => {
       setSubmitStatus('success');
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
         formEl.reset();
+        // Hide success message after 4 seconds
         setTimeout(() => setSubmitStatus(null), 4000);
       } else {
         setSubmitStatus('error');
@@ -58,7 +59,7 @@ const ContactForm = () => {
     <section id="contact" ref={ref} className="min-h-[600px] border-t border-gray-300 dark:border-gray-700">
       {/* Split Section - Text Content and Form */}
       <div className="pb-12">
-        <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-6 lg:gap-8 px-4 md:px-6 lg:px-12 max-w-7xl mx-auto mt-12 md:mt-16 lg:mt-36">
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl mx-auto mt-12 md:mt-16 lg:mt-36">
           {/* Left Section - Text Content */}
           <div className="w-full lg:w-1/2 relative overflow-hidden flex flex-col min-h-[300px] lg:min-h-[520px] rounded-xl lg:rounded-l-xl justify-center px-6 md:px-8 lg:px-12 py-8 lg:py-0">
         <motion.div
@@ -69,18 +70,18 @@ const ContactForm = () => {
         >
               {/* Headline */}
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-                <span className="inline-block bg-gradient-to-r from-cyan-400 via-white to-pink-400 bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(59,130,246,0.3)] animate-pulse">
+                <span className="inline-block bg-gradient-to-r from-white via-[#e9d5ff] to-white bg-clip-text text-transparent animate-pulse">
                   Let's Connect
                 </span>
-                <span className="inline-block bg-gradient-to-r from-pink-400 via-white to-cyan-400 bg-clip-text text-transparent ml-3">
+                <span className="inline-block text-gray-400 ml-3">
                   — Turn Ideas Into Reality
                 </span>
               </h2>
               {/* Decorative line under headline */}
               <div className="flex items-center justify-start gap-4 mb-6 mt-6">
-                <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-400 via-pink-400 to-transparent"></div>
-                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-pink-400 animate-pulse"></div>
-                <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-pink-400 to-cyan-400"></div>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#8b5cf6] to-transparent"></div>
+                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#a855f7] animate-pulse"></div>
+                <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-[#a855f7] to-transparent"></div>
               </div>
               
               {/* Subtext */}
@@ -91,15 +92,15 @@ const ContactForm = () => {
               {/* Bullet Points */}
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-cyan-500 dark:text-cyan-400 mt-1">•</span>
+                  <span className="text-[#8b5cf6] dark:text-[#a855f7] mt-1">•</span>
                   <span className="text-base text-gray-700 dark:text-gray-300">Bring your ideas and imagination to life</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-purple-500 dark:text-purple-400 mt-1">•</span>
+                  <span className="text-[#8b5cf6] dark:text-[#a855f7] mt-1">•</span>
                   <span className="text-base text-gray-700 dark:text-gray-300">Collaborate on freelance or team projects</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-pink-500 dark:text-pink-400 mt-1">•</span>
+                  <span className="text-[#8b5cf6] dark:text-[#a855f7] mt-1">•</span>
                   <span className="text-base text-gray-700 dark:text-gray-300">Let's make your next big project stand out</span>
                 </li>
               </ul>
@@ -120,22 +121,17 @@ const ContactForm = () => {
               className="flex-1 flex flex-col w-full relative z-10 h-full"
             >
               {/* Form Container */}
-              <div className="relative rounded-2xl p-6 lg:p-8 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border border-gray-200 dark:border-gray-700 h-full flex flex-col overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.45)]">
-                {/* Gradient ring border */}
-                <div className="pointer-events-none absolute -inset-[2px] rounded-2xl bg-gradient-to-r from-cyan-400/40 via-purple-400/40 to-pink-400/40 opacity-40"></div>
-                {/* Corner glow accents */}
-                <div className="pointer-events-none absolute -top-8 -right-8 w-40 h-40 bg-pink-500/10 blur-3xl rounded-full"></div>
-                <div className="pointer-events-none absolute -bottom-10 -left-10 w-44 h-44 bg-cyan-500/10 blur-3xl rounded-full"></div>
+              <div className="relative rounded-2xl p-6 lg:p-8 bg-white/10 dark:bg-gray-900/30 backdrop-blur-xl border border-white/20 dark:border-purple-500/30 h-full flex flex-col overflow-hidden shadow-xl" style={{
+                boxShadow: '0 8px 32px 0 rgba(139, 92, 246, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)'
+              }}>
+                {/* Purple gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-pink-500/5 to-transparent rounded-2xl opacity-50"></div>
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-5 pointer-events-none">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,black_1px,transparent_0)] dark:bg-[radial-gradient(circle_at_2px_2px,white_1px,transparent_0)]" style={{
                     backgroundSize: '40px 40px'
                   }}></div>
                 </div>
-
-                {/* Gradient Orbs */}
-                <div className="pointer-events-none absolute top-0 right-0 w-64 h-64 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-3xl"></div>
-                <div className="pointer-events-none absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/5 dark:bg-cyan-500/10 rounded-full blur-3xl"></div>
                 
                 {/* Shimmer Effect */}
                 <motion.div
@@ -161,7 +157,7 @@ const ContactForm = () => {
                     transition={{ delay: 0.3 }}
                   >
                     <div className="relative group">
-                      <label htmlFor="name" className="mb-1.5 block text-xs font-medium text-gray-700 dark:text-gray-300">Name <span className="text-pink-500">*</span></label>
+                      <label htmlFor="name" className="mb-1.5 block text-xs font-medium text-gray-700 dark:text-gray-300">Name <span className="text-[#8b5cf6]">*</span></label>
                     <input
                       type="text"
                       id="name"
@@ -169,10 +165,9 @@ const ContactForm = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                        className="w-full px-4 py-3.5 text-sm rounded-lg bg-white dark:bg-gray-900/85 border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-cyan-500/60 focus:border-transparent outline-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 transition-all duration-300 shadow-sm"
+                        className="w-full px-4 py-3.5 text-sm rounded-lg bg-white/20 dark:bg-gray-900/50 backdrop-blur-sm border border-white/30 dark:border-purple-500/30 focus:ring-2 focus:ring-[#8b5cf6]/60 focus:border-[#8b5cf6]/60 outline-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 transition-all duration-300 shadow-sm"
                         placeholder="Full name"
                     />
-                      <div className="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/0 via-cyan-500/0 to-purple-500/0 group-focus-within:from-cyan-500/10 group-focus-within:via-purple-500/10 group-focus-within:to-pink-500/10 blur-xl transition-all duration-300 -z-10"></div>
                   </div>
                   </motion.div>
 
@@ -183,7 +178,7 @@ const ContactForm = () => {
                     transition={{ delay: 0.4 }}
                   >
                     <div className="relative group">
-                      <label htmlFor="email" className="mb-1.5 block text-xs font-medium text-gray-700 dark:text-gray-300">Email <span className="text-pink-500">*</span></label>
+                      <label htmlFor="email" className="mb-1.5 block text-xs font-medium text-gray-700 dark:text-gray-300">Email <span className="text-[#8b5cf6]">*</span></label>
                     <input
                       type="email"
                       id="email"
@@ -191,10 +186,9 @@ const ContactForm = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                        className="w-full px-4 py-3.5 text-sm rounded-lg bg-white dark:bg-gray-900/85 border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-purple-500/60 focus:border-transparent outline-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 transition-all duration-300 shadow-sm"
+                        className="w-full px-4 py-3.5 text-sm rounded-lg bg-white/20 dark:bg-gray-900/50 backdrop-blur-sm border border-white/30 dark:border-purple-500/30 focus:ring-2 focus:ring-[#8b5cf6]/60 focus:border-[#8b5cf6]/60 outline-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 transition-all duration-300 shadow-sm"
                         placeholder="Email address"
                       />
-                      <div className="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-pink-500/0 group-focus-within:from-purple-500/10 group-focus-within:via-pink-500/10 group-focus-within:to-cyan-500/10 blur-xl transition-all duration-300 -z-10"></div>
                     </div>
                   </motion.div>
 
@@ -212,10 +206,9 @@ const ContactForm = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3.5 text-sm rounded-lg bg-white dark:bg-gray-900/85 border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-pink-500/60 focus:border-transparent outline-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 transition-all duration-300 shadow-sm"
+                        className="w-full px-4 py-3.5 text-sm rounded-lg bg-white dark:bg-gray-900/85 border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-gray-400 focus:border-gray-400 outline-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 transition-all duration-300 shadow-sm"
                         placeholder="Phone"
                       />
-                      <div className="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-r from-pink-500/0 via-pink-500/0 to-cyan-500/0 group-focus-within:from-pink-500/10 group-focus-within:via-cyan-500/10 group-focus-within:to-purple-500/10 blur-xl transition-all duration-300 -z-10"></div>
                   </div>
                   </motion.div>
 
@@ -226,7 +219,7 @@ const ContactForm = () => {
                     transition={{ delay: 0.6 }}
                   >
                     <div className="relative group">
-                      <label htmlFor="subject" className="mb-1.5 block text-xs font-medium text-gray-700 dark:text-gray-300">Subject <span className="text-pink-500">*</span></label>
+                      <label htmlFor="subject" className="mb-1.5 block text-xs font-medium text-gray-700 dark:text-gray-300">Subject <span className="text-[#8b5cf6]">*</span></label>
                     <input
                       type="text"
                       id="subject"
@@ -234,10 +227,9 @@ const ContactForm = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                        className="w-full px-4 py-3.5 text-sm rounded-lg bg-white dark:bg-gray-900/85 border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-cyan-500/60 focus:border-transparent outline-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 transition-all duration-300 shadow-sm"
+                        className="w-full px-4 py-3.5 text-sm rounded-lg bg-white/20 dark:bg-gray-900/50 backdrop-blur-sm border border-white/30 dark:border-purple-500/30 focus:ring-2 focus:ring-[#8b5cf6]/60 focus:border-[#8b5cf6]/60 outline-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 transition-all duration-300 shadow-sm"
                         placeholder="Subject"
                     />
-                      <div className="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/0 via-cyan-500/0 to-purple-500/0 group-focus-within:from-cyan-500/10 group-focus-within:via-purple-500/10 group-focus-within:to-pink-500/10 blur-xl transition-all duration-300 -z-10"></div>
                   </div>
                   </motion.div>
 
@@ -248,7 +240,7 @@ const ContactForm = () => {
                     transition={{ delay: 0.7 }}
                   >
                     <div className="relative group">
-                      <label htmlFor="message" className="mb-1.5 block text-xs font-medium text-gray-700 dark:text-gray-300">Message <span className="text-pink-500">*</span></label>
+                      <label htmlFor="message" className="mb-1.5 block text-xs font-medium text-gray-700 dark:text-gray-300">Message <span className="text-[#8b5cf6]">*</span></label>
                     <textarea
                       id="message"
                       name="message"
@@ -256,10 +248,9 @@ const ContactForm = () => {
                       onChange={handleChange}
                       required
                         rows="4"
-                        className="w-full px-4 py-3.5 text-sm rounded-lg bg-white dark:bg-gray-900/85 border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-purple-500/60 focus:border-transparent outline-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 resize-none transition-all duration-300 shadow-sm"
+                        className="w-full px-4 py-3.5 text-sm rounded-lg bg-white/20 dark:bg-gray-900/50 backdrop-blur-sm border border-white/30 dark:border-purple-500/30 focus:ring-2 focus:ring-[#8b5cf6]/60 focus:border-[#8b5cf6]/60 outline-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 resize-none transition-all duration-300 shadow-sm"
                         placeholder="Your Message"
                       />
-                      <div className="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-pink-500/0 group-focus-within:from-purple-500/10 group-focus-within:via-pink-500/10 group-focus-within:to-cyan-500/10 blur-xl transition-all duration-300 -z-10"></div>
                     </div>
                   </motion.div>
                   </div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown, Download, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 import bioData from '../../data/bio.json';
 import socialLinksData from '../../data/socialLinks.json';
 import { ArrowButton } from '../ui';
@@ -9,12 +10,14 @@ const HeroSection = () => {
   const roles = ['UI/UX Designer', 'Web Developer', 'Graphic Designer', 'Digital Marketer'];
   const [roleIndex, setRoleIndex] = useState(0);
 
+  // Rotate through roles every 1.5 seconds
   useEffect(() => {
     const intervalId = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 1500); // hold ~1.5s per role
+    }, 1500);
     return () => clearInterval(intervalId);
   }, []);
+
   const scrollToContact = () => {
     const contactSection = document.querySelector('#contact');
     if (contactSection) {
@@ -141,12 +144,16 @@ const HeroSection = () => {
             {/* Profile Image - Smaller for left side */}
             <motion.div variants={itemVariants} className="mb-8 lg:hidden">
               <div className="relative inline-block">
-                <div className="w-80 h-80 md:w-96 md:h-96 rounded-full mx-auto">
-                    <img
+                <div className="w-80 h-80 md:w-96 md:h-96 rounded-full mx-auto relative">
+                    <Image
                         src="/images/profile/home (1).png"
-                        alt={bioData.name}
-                        className="w-full h-full object-contain rounded-full"
-                      />
+                    alt={bioData.name}
+                        width={384}
+                        height={384}
+                    className="w-full h-full object-contain rounded-full"
+                        priority
+                        loading="eager"
+                  />
                 </div>
                 
               </div>
@@ -234,11 +241,15 @@ const HeroSection = () => {
 
               {/* Main Photo (no frame, larger size) */}
               <div className="relative w-full flex justify-end">
-                    <img
+                    <Image
                       src="/images/profile/home (1).png"
-                      alt={bioData.name}
-                      className="w-auto max-h-[90vh] lg:max-h-[95vh] xl:max-h-[100vh] object-contain scale-125"
-                    />
+                  alt={bioData.name}
+                      width={800}
+                      height={1000}
+                  className="w-auto max-h-[90vh] lg:max-h-[95vh] xl:max-h-[100vh] object-contain scale-125"
+                      priority
+                      loading="eager"
+                />
                 {/* Soft spotlight */}
                 <div className="pointer-events-none absolute -z-10 bottom-10 right-10 w-72 h-72 rounded-full bg-white/5 blur-[80px]" />
               </div>

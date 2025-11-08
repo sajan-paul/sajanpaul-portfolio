@@ -75,7 +75,7 @@ const ResumeButton = ({ href, download, children = 'Resume' }) => {
   return (
     <a 
       href={href} 
-      download={download} 
+      download={download ? (download === true ? 'Sajan_Paul_Resume.pdf' : download) : undefined}
       style={buttonStyle}
       onMouseEnter={(e) => {
         e.currentTarget.style.background = 'rgba(139,92,246,0.22)';

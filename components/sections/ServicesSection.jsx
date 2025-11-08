@@ -208,7 +208,7 @@ const ServicesSection = () => {
           </motion.div>
 
             {/* Services Grid - Custom 3x3 Layout (2x3 on mobile) */}
-            <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-3 gap-4 md:gap-6 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mb-20 justify-items-center">
               {/* Card 1: Occupies cells 1 & 4 (Tall - spans 2 rows, column 1) */}
               <motion.div
                 key={services[0].title}

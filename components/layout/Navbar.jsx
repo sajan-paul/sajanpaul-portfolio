@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Code, Home, User, Briefcase, BookOpen, Mail } from 'lucide-react';
 
@@ -28,9 +29,18 @@ const Navbar = () => {
 
   const scrollToSection = (href) => {
     if (href.startsWith('#')) {
+      // Check if we're on home page or another page
+      const isHomePage = window.location.pathname === '/' || window.location.pathname === '';
+      
+      if (isHomePage) {
+        // Just scroll to the section
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // Navigate to home page with the section hash
+        window.location.href = `/${href}`;
       }
     }
     setIsOpen(false);
@@ -50,8 +60,15 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-12 h-12 rounded-lg overflow-hidden">
-              <img src="/images/profile/logo.png" alt="Sajan Paul Logo" className="w-full h-full object-contain" />
+            <div className="w-12 h-12 rounded-lg overflow-hidden relative">
+              <Image 
+                src="/images/profile/logo.png" 
+                alt="Sajan Paul Logo" 
+                width={48}
+                height={48}
+                className="w-full h-full object-contain"
+                priority
+              />
             </div>
             <span className="text-2xl font-bold text-white font-creative neon-glow" style={{ color: '#ffffff' }}>SAJAN PAUL</span>
           </Link>

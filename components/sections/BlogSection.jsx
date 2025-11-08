@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react';
 
 const BlogSection = () => {
@@ -79,7 +80,7 @@ const BlogSection = () => {
           {/* Blog Posts Grid */}
           <motion.div
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 justify-items-center"
           >
             {recentPosts.map((post, index) => (
               <Link key={post.slug} href={`/blog/${post.slug}`}>
@@ -100,10 +101,13 @@ const BlogSection = () => {
                     {/* Post Image with Enhanced Design */}
                     <div className="relative h-64 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
-                      <img
+                      <Image
                         src="/images/blog/portfolio.png"
                         alt={post.frontMatter.title}
+                        width={600}
+                        height={256}
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
                       />
                       
                       {/* Category Badge with Glow */}
@@ -181,10 +185,13 @@ const BlogSection = () => {
                   <div className="hidden md:block">
                     {/* Post Image */}
                     <div className="relative overflow-hidden">
-                      <img
+                      <Image
                         src="/images/blog/portfolio.png"
                         alt={post.frontMatter.title}
+                        width={600}
+                        height={192}
                         className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
                       />
                       <div className="absolute top-4 left-4">
                         <span className="px-3 py-1 bg-primary-600 text-white text-sm font-medium rounded-full">

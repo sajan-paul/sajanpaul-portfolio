@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Optimized font loading with display=swap for better performance */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Font-display swap is already included in Google Fonts URLs above */
 
 @layer base {
   html {
@@ -106,14 +109,16 @@
   padding: 0;
   display: grid;
   border-radius: 8px;
-  border: 2px solid #2a2a3b; /* subtle dark border to match site */
+  border: 2px solid rgba(124, 58, 237, 0.6); /* deeper purple border */
   letter-spacing: 0.25px;
   cursor: pointer;
   position: relative;
-  background: #0b1020; /* deep slate to match project base */
+  background: rgba(124, 58, 237, 0.4); /* deeper purple background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: white;
   font-weight: 600;
-  outline-color: #7c3aed; /* deep purple */
+  outline-color: #7c3aed; /* deeper purple */
   outline-offset: 0.25rem;
 }
 
@@ -141,12 +146,12 @@
   --size: 28px;
   width: 58px;
   height: 100%;
-  background: linear-gradient(90deg, #06b6d4 0%, #8b5cf6 50%, #ec4899 100%);
+  background: linear-gradient(90deg, #7c3aed 0%, #8b5cf6 50%, #a78bfa 100%);
   position: absolute;
   left: 0;
   transition: width 0.25s;
   border-radius: 6px;
-  box-shadow: 0 10px 18px -6px rgba(139, 92, 246, 0.45);
+  box-shadow: 0 10px 18px -6px rgba(124, 58, 237, 0.6);
   container-type: inline-size;
 }
 
@@ -199,6 +204,58 @@
   display: grid;
   place-items: center;
   height: 100%;
+}
+
+/* Force official brand colors for Adobe and Canva icons */
+.adobe-photoshop-icon,
+.adobe-photoshop-icon path,
+.adobe-photoshop-icon svg {
+  color: #001E36 !important;
+  fill: #001E36 !important;
+}
+
+.adobe-illustrator-icon,
+.adobe-illustrator-icon path,
+.adobe-illustrator-icon svg {
+  color: #FF9A00 !important;
+  fill: #FF9A00 !important;
+}
+
+.adobe-xd-icon,
+.adobe-xd-icon path,
+.adobe-xd-icon svg {
+  color: #FF61F6 !important;
+  fill: #FF61F6 !important;
+}
+
+.canva-icon,
+.canva-icon path,
+.canva-icon svg {
+  color: #00C4CC !important;
+  fill: #00C4CC !important;
+}
+
+/* Skill icon responsive sizing */
+.skill-icon-container {
+  width: 56px;
+  height: 56px;
+}
+
+.skill-icon-inner {
+  width: 40px;
+  height: 40px;
+}
+
+@media (min-width: 1024px) {
+  .skill-icon-container {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .skill-icon-inner {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 

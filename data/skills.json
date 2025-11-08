@@ -7,7 +7,6 @@
         { "name": "React", "level": 90, "icon": "⚛️" },
         { "name": "Next.js", "level": 85, "icon": "▲" },
         { "name": "JavaScript", "level": 90, "icon": "🟨" },
-        { "name": "TypeScript", "level": 80, "icon": "📘" },
         { "name": "Node.js", "level": 75, "icon": "🟢" },
         { "name": "HTML", "level": 95, "icon": "🌐" },
         { "name": "CSS", "level": 95, "icon": "🎨" },

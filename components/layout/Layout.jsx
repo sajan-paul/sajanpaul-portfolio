@@ -21,6 +21,9 @@ const Layout = ({ children, title = "Sajan Paul", description = "Web designer an
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
+        {/* Performance optimizations */}
+        <meta httpEquiv="x-dns-prefetch-control" content="on" />
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
       </Head>
       
       <div className="min-h-screen relative">
